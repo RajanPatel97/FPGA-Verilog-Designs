@@ -1,0 +1,47 @@
+module fsm (
+tick_ms,
+tick_hs,
+trigger,
+time_out,
+en_lfsr,
+start_delay,
+ledr
+);
+
+
+input tick_ms, tick_hs, trigger, time_out;
+output en_lfsr, start_delay,ledr;
+
+reg [3:0] count;
+reg [1:0] state;
+
+parameter IDLE = 2'b00, COUNTING = 2'b01;
+parameter TIME_OUT = 2'b10, WAIT_LOW = 2'b11;
+
+initial state = IDLE;
+initial count = 9;
+
+always @(posedge sysclk)
+	case (state)
+		IDLE: 		if (trigger==1'b1)
+							state <= COUNTING;
+		COUNTING:	if (count==0) begin
+							count <= n - 1'b1;
+							state <= TIME_OUT;
+							end
+						else 
+							count <= count - 1'b1;
+		WAIT_LOW:	if (trigger==1'b0)
+							state <= IDLE;
+		default:		;
+	endcase 
+	
+always @ (*)
+	case (state)
+		IDLE:				time_out = 1'b0;
+		COUNTING:		time_out = 1'b0;
+		TIME_OUT:		time_out = 1'b1;
+		WAIT_LOW:		time_out = 1'b0;
+		default:	;
+	endcase
+endmodule 

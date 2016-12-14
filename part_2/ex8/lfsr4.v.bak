@@ -1,0 +1,15 @@
+module lfsr6 (data_out, clk);
+
+	output [5:0]	data_out;
+	input				clk;
+	
+	reg[5:0]			sreg;
+	
+	initial sreg = 5'b1;
+
+	always @ (posedge clk)
+		sreg <= {sreg[5:0], sreg[4] ^ sreg[0]};
+		
+	assign data_out = sreg;
+
+endmodule 

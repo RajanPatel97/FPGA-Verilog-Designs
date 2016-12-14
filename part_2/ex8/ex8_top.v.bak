@@ -1,0 +1,20 @@
+module ex8_top(
+CLOCK_50,
+KEY[3],
+HEX0,
+HEX1,
+HEX2,
+HEX3,
+HEX4,
+LEDR
+);
+
+input		CLOCK_50, KEY[3];
+output	[9:0] LEDR;
+output 	HEX0,HEX1,HEX2,HEX3,HEX4;
+
+wire		tick_ms, tick_hs, en_lfsr, start_delay;
+wire		[13:0] prbs;
+wire		[4:0]	BCD_0, BCD_1, BCD_2, BCD_3, BCD_4;
+
+
