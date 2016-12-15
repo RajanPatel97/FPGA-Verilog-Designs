@@ -1,0 +1,24 @@
+timescale 1ns / 100ps
+
+module clk_tick (
+clock,
+count,
+tick
+);
+parameter BIT_SZ=16;
+input clock;
+output [BIT_SZ-1:0] count;
+output tick
+
+reg [BIT_SZ-1:0] count;
+
+initial count=0;
+
+always @ (posedge clock) 
+	if (count == 50000)
+		tick = 1;
+	else if (enable == 1'b1)
+		count = count + 1'b1;
+
+endmodule
+

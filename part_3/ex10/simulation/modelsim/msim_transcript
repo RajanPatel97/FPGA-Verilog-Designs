@@ -1,0 +1,87 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do ex10_top_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+H:/Veri/part_2/mylib {H:/Veri/part_2/mylib/clk_tick.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module clk_tick
+# 
+# Top level modules:
+# 	clk_tick
+# vlog -vlog01compat -work work +incdir+H:/Veri/part_3/ex10 {H:/Veri/part_3/ex10/spi2dac.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module spi2dac
+# 
+# Top level modules:
+# 	spi2dac
+# vlog -vlog01compat -work work +incdir+H:/Veri/part_3/ex10 {H:/Veri/part_3/ex10/ex10_top.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ex10_top
+# 
+# Top level modules:
+# 	ex10_top
+# 
+vsim -do ex10_top_run_msim_rtl_verilog.do -l msim_transcript -gui work.spi2dac
+# vsim -do ex10_top_run_msim_rtl_verilog.do -l msim_transcript -gui work.spi2dac 
+# Loading work.spi2dac
+# do ex10_top_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+H:/Veri/part_2/mylib {H:/Veri/part_2/mylib/clk_tick.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module clk_tick
+# 
+# Top level modules:
+# 	clk_tick
+# vlog -vlog01compat -work work +incdir+H:/Veri/part_3/ex10 {H:/Veri/part_3/ex10/spi2dac.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module spi2dac
+# 
+# Top level modules:
+# 	spi2dac
+# vlog -vlog01compat -work work +incdir+H:/Veri/part_3/ex10 {H:/Veri/part_3/ex10/ex10_top.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ex10_top
+# 
+# Top level modules:
+# 	ex10_top
+# 
+vsim do.tb_spi2dac.do
+# vsim do.tb_spi2dac.do 
+# ** Error: (vsim-19) Failed to access library 'do.tb_spi2dac' at "do.tb_spi2dac".
+# 
+# No such file or directory. (errno = ENOENT)
+# Error loading design
+vlog -reportprogress 300 -work work H:/Veri/part_3/ex10/simulation/modelsim/ex10_top.vo
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ex10_top
+# 
+# Top level modules:
+# 	ex10_top
+vlog -reportprogress 300 -work work H:/Veri/part_3/ex10/spi2dac.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module spi2dac
+# 
+# Top level modules:
+# 	spi2dac
+vsim work.spi2dac
+# vsim work.spi2dac 
+# Loading work.spi2dac
+do.tb_spi2dac.do
+# invalid command name "do.tb_spi2dac.do"
+do ./tb_spi2dac.do
+# Cannot open macro file: ./tb_spi2dac.do
+do ./tb_spi2dac.do
