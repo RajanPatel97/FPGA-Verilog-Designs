@@ -2,12 +2,10 @@
 
 module clk_tick (
 clock,
-count,
 tick
 );
 parameter BIT_SZ=16;
 input clock;
-output [BIT_SZ-1:0] count;
 output tick;
 
 reg [BIT_SZ-1:0] count;
