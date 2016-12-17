@@ -29,8 +29,8 @@ module processor (sysclk, pulse, data_in, data_out);
 	// This part should include your own processing hardware 
 	// ... that takes x to produce y
 	// ... In this case, it is ALL PASS.
-	FIFO				fifo1 (sysclk, y, dout && pulse, pulse, full,q);
-	dflip				dflip1(sysclk, full, dout);
+	FIFO				fifo1 (sysclk, y, dout && full, pulse, full,q);
+	dflip				dflip1(sysclk, pulse, dout);
 	
 	assign y = x*4 - {q[9], q[9:1]}; 
 	
