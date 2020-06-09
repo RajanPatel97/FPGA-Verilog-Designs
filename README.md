@@ -6,3 +6,5 @@ Then all of these individual modules were pieced together to form a complete ech
 
 Each Part has its own folder as well as a corresponding PDF inside it explaining the results obtained in each part and each experiment. 
 All the code for each module and top file in a given experiment is provided. 
+
+![](https://github.com/RajanPatel97/FPGA-Verilog-Designs/blob/master/assets/fpgaSynth.jpg)
